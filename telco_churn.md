@@ -18,6 +18,7 @@ O dataset Telco Customer Churn contêm informações sobre uma empresa fictícia
 O objetivo deste projeto é (1) explorar os dados em busca de insights sobre a taxa de Churn da Telco, e (2) construir um modelo de machine learning capaz de predizer clientes que darão churn.
 
 ## Dados
+
 |Coluna|Descrição|
 |---|---|
 |`customerID`|Identificador único dos clientes|
@@ -45,10 +46,13 @@ O objetivo deste projeto é (1) explorar os dados em busca de insights sobre a t
 Os dados podem ser encontrados no [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data) e foram disponibilizados por BlastChar.
 
 ## Métodos e modelos
+
 #### Pré-processamento e otimizações
 - Scikit-learn, Optuna, Category Encoders, Feature Engine.
+
 #### Modelos
 - RandomForest, CatBoost.
+
 #### Métricas de avaliação
 - Acurácia, F1 Score, ROC AUC e MCC.
 
