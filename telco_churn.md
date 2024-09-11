@@ -1,6 +1,6 @@
-# Predição de Churn com Machine Learning 📞
+# Análise e Predição de Churn em uma Telecom
 
-![img](https://github.com/datalopes1/telco_pred_churn/blob/main/doc/img/n3hyBGx.jpeg?raw=true)
+![img](/assets/img/jPv7c5yLaBe8HoUV0Gbi--3--gjeze.jpg)
 
 ## Conteúdo
 
@@ -13,6 +13,8 @@
 
 ## Introdução
 O dataset Telco Customer Churn contêm informações sobre uma empresa fictícia de telecomunicações que forneceu serviços de telefone residencial e Internet para 7043 clientes na Califórnia no terceiro trimestre. Eles indicam quais clientes deixaram, permaneceram ou se inscreveram para os seus serviços.
+
+**Veja o projeto completo**: [Github](https://github.com/datalopes1/telco_pred_churn)
 
 ## Metas e objetivos
 O objetivo deste projeto é (1) explorar os dados em busca de insights sobre a taxa de Churn da Telco, e (2) construir um modelo de machine learning capaz de predizer clientes que darão churn.
@@ -82,7 +84,8 @@ Os dados podem ser encontrados no [Kaggle](https://www.kaggle.com/datasets/blast
 ![cmatrix](https://github.com/datalopes1/telco_pred_churn/blob/main/doc/img/plot/cf.png?raw=true)
 
 ## Ferramentas utilizadas
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
+
+![Python](https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white)![Jupyter](https://img.shields.io/badge/Jupyter-F37626.svg?style=for-the-badge&logo=Jupyter&logoColor=white)![Scikit-learn](https://img.shields.io/badge/scikitlearn-F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
 ## Contatos
 - **E-mail:** andreluizlcons@gmail.com
