@@ -11,3 +11,4 @@ Com informações sobre uma empresa fictícia de telecomunicações que forneceu
 
 - [Veja o README](/telco_churn.md).
 - Projeto completo no [Github](https://github.com/datalopes1/telco_pred_churn).
+- App do [Streamlit](https://telcochurn-predictor.streamlit.app/).
