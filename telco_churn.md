@@ -14,8 +14,8 @@
 ## Introdução
 O dataset Telco Customer Churn contêm informações sobre uma empresa fictícia de telecomunicações que forneceu serviços de telefone residencial e Internet para 7043 clientes na Califórnia no terceiro trimestre. Eles indicam quais clientes deixaram, permaneceram ou se inscreveram para os seus serviços.
 
-**Veja o projeto completo**: [Github](https://github.com/datalopes1/telco_pred_churn)
-**Faça Predições com o Aplicativo Web:** [Streamlit](https://telcochurn-predictor.streamlit.app/).
+- **Veja o projeto completo**: [Github](https://github.com/datalopes1/telco_pred_churn)
+- **Faça Predições com o Aplicativo Web:** [Streamlit](https://telcochurn-predictor.streamlit.app/).
 
 ## Metas e objetivos
 O objetivo deste projeto é (1) explorar os dados em busca de insights sobre a taxa de Churn da Telco, e (2) construir um modelo de machine learning capaz de predizer clientes que darão churn.
