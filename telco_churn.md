@@ -8,6 +8,7 @@
 - [Metas e objetivos](#metas-e-objetivos)
 - [Dados](#dados)
 - [Métodos e modelos](#métodos-e-modelos)
+- [Análise Exploratória de Dados](#análise-exploratória-de-dados)
 - [Resultados](#resultados)
 - [Ferramentas utilizadas](#ferramentas-utilizadas)
 
@@ -71,8 +72,8 @@ A média da taxa de Churn no mercado de telefonia é entre 3% e 5%, a Telco poss
 #### Churn x Tempo de Relacionamento
 Quanto mais tempo permanecemos consumindo um serviços, muitas vezes por apego ou comodidade evitamos seu cancelamento. Em inicio de contrato o comportamento de estar atento e menos paciente com erros é comum, vamos trabalhar em cima da seguinte hipótese:
 
-- $H_0:$ O tempo de relacionamento com a empresa não tem efeito significativo na probabilidade de churn.
-- H1 Pessoas com menor tempo de relacionamento com a empresa têm maior probabilidade de churn.
+- H0: O tempo de relacionamento com a empresa não tem efeito significativo na probabilidade de churn.
+- H1: Pessoas com menor tempo de relacionamento com a empresa têm maior probabilidade de churn.
 
 Rejeitamos H0: Clientes com menor tempo de relacionamento com a empresa tem maior probabilidade de churn.
 
@@ -82,7 +83,7 @@ Rejeitamos H0: Clientes com menor tempo de relacionamento com a empresa tem maio
 
 Pagar mais caro em um serviço é algo que também vai elevar o nível de exigência e diminuir o de paciência, vamos trabalhar na seguinte hipótese:
 
-- $H_0:$ O valor da mensalidade não tem efeito significativo na probabilidade de churn.
+- H0: O valor da mensalidade não tem efeito significativo na probabilidade de churn.
 - H1: Clientes que pagam maiores mensalidades têm maior probabilidade de churn.
 
 Rejeitamos H0: Clientes que pagam maiores mensalidades têm maior probabilidade de churn.
@@ -102,10 +103,10 @@ Rejeitamos H0: Churn não é independente do Tipo de Contrato.
 #### Churn x Método de Pagamento
 A forma de pagamento também é outra variável que pode influenciar na probabilidade de Churn, vamos trabalhar essa hipótese:
 
-- $H_0:$ Churn é independente do Método de Pagamento.
-- H1 Churn não é independente do Método de Pagamento.
+- H0: Churn é independente do Método de Pagamento.
+- H1: Churn não é independente do Método de Pagamento.
 
-$H_0:$ Churn não é independente do Método de Pagamento.
+H0: Churn não é independente do Método de Pagamento.
 
 ![h2](assets/img/telco_churn/plot5.png)
 
