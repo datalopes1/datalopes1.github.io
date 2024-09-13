@@ -60,6 +60,8 @@ Os dados podem ser encontrados no [Kaggle](https://www.kaggle.com/datasets/blast
 - Acurácia, F1 Score, ROC AUC e MCC.
 
 ## Análise Exploratória de Dados
+**Cálculos dos Testes e construção dos gráficos:** [Jupyter Notebook](https://github.com/datalopes1/telco_pred_churn/blob/main/notebooks/notebook.ipynb)
+
 ### Comportamento do target
 ![target](assets/img/telco_churn/plot1.png)
 
@@ -72,9 +74,40 @@ Quanto mais tempo permanecemos consumindo um serviços, muitas vezes por apego o
 - $H_0:$ O tempo de relacionamento com a empresa não tem efeito significativo na probabilidade de churn.
 - $H_1:$ Pessoas com menor tempo de relacionamento com a empresa têm maior probabilidade de churn.
 
+Rejeitamos $H_0$: Clientes com menor tempo de relacionamento com a empresa tem maior probabilidade de churn.
+
 ![h1](assets/img/telco_churn/plot2.png)
 
-Rejeitamos $H_0$: Clientes com menor tempo de relacionamento com a empresa tem maior probabilidade de churn.
+#### Churn x Mensalidade
+
+Pagar mais caro em um serviço é algo que também vai elevar o nível de exigência e diminuir o de paciência, vamos trabalhar na seguinte hipótese:
+
+- $H_0:$ O valor da mensalidade não tem efeito significativo na probabilidade de churn.
+- $H_1$: Clientes que pagam maiores mensalidades têm maior probabilidade de churn.
+
+Rejeitamos $H_0$: Clientes que pagam maiores mensalidades têm maior probabilidade de churn.
+
+![h2](assets/img/telco_churn/plot3.png)
+
+#### Churn x Tipo de Contrato
+A forma de contrato também pode estar ligada a probabilidade de Churn, vamos trabalhar também nessa hipótese:
+
+- $H_0$: Churn é independente do Tipo de Contrato.
+- $H_1:$ Churn não é independente do Tipo de Contrato.
+
+Rejeitamos $H_0$: Churn não é independente do Tipo de Contrato.
+
+![h2](assets/img/telco_churn/plot4.png)
+
+#### Churn x Método de Pagamento
+A forma de pagamento também é outra variável que pode influenciar na probabilidade de Churn, vamos trabalhar essa hipótese:
+
+- $H_0:$ Churn é independente do Método de Pagamento.
+- $H_1:$ Churn não é independente do Método de Pagamento.
+
+$H_0:$ Churn não é independente do Método de Pagamento.
+
+![h2](assets/img/telco_churn/plot5.png)
 
 ## Resultados
 ### Conclusões da Análise Exploratória
