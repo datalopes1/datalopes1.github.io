@@ -72,9 +72,9 @@ A média da taxa de Churn no mercado de telefonia é entre 3% e 5%, a Telco poss
 Quanto mais tempo permanecemos consumindo um serviços, muitas vezes por apego ou comodidade evitamos seu cancelamento. Em inicio de contrato o comportamento de estar atento e menos paciente com erros é comum, vamos trabalhar em cima da seguinte hipótese:
 
 - $H_0:$ O tempo de relacionamento com a empresa não tem efeito significativo na probabilidade de churn.
-- $H_1:$ Pessoas com menor tempo de relacionamento com a empresa têm maior probabilidade de churn.
+- H1 Pessoas com menor tempo de relacionamento com a empresa têm maior probabilidade de churn.
 
-Rejeitamos $H_0$: Clientes com menor tempo de relacionamento com a empresa tem maior probabilidade de churn.
+Rejeitamos H0: Clientes com menor tempo de relacionamento com a empresa tem maior probabilidade de churn.
 
 ![h1](assets/img/telco_churn/plot2.png)
 
@@ -83,19 +83,19 @@ Rejeitamos $H_0$: Clientes com menor tempo de relacionamento com a empresa tem m
 Pagar mais caro em um serviço é algo que também vai elevar o nível de exigência e diminuir o de paciência, vamos trabalhar na seguinte hipótese:
 
 - $H_0:$ O valor da mensalidade não tem efeito significativo na probabilidade de churn.
-- $H_1$: Clientes que pagam maiores mensalidades têm maior probabilidade de churn.
+- H1: Clientes que pagam maiores mensalidades têm maior probabilidade de churn.
 
-Rejeitamos $H_0$: Clientes que pagam maiores mensalidades têm maior probabilidade de churn.
+Rejeitamos H0: Clientes que pagam maiores mensalidades têm maior probabilidade de churn.
 
 ![h2](assets/img/telco_churn/plot3.png)
 
 #### Churn x Tipo de Contrato
 A forma de contrato também pode estar ligada a probabilidade de Churn, vamos trabalhar também nessa hipótese:
 
-- $H_0$: Churn é independente do Tipo de Contrato.
-- $H_1:$ Churn não é independente do Tipo de Contrato.
+- H0: Churn é independente do Tipo de Contrato.
+- H1 Churn não é independente do Tipo de Contrato.
 
-Rejeitamos $H_0$: Churn não é independente do Tipo de Contrato.
+Rejeitamos H0: Churn não é independente do Tipo de Contrato.
 
 ![h2](assets/img/telco_churn/plot4.png)
 
@@ -103,7 +103,7 @@ Rejeitamos $H_0$: Churn não é independente do Tipo de Contrato.
 A forma de pagamento também é outra variável que pode influenciar na probabilidade de Churn, vamos trabalhar essa hipótese:
 
 - $H_0:$ Churn é independente do Método de Pagamento.
-- $H_1:$ Churn não é independente do Método de Pagamento.
+- H1 Churn não é independente do Método de Pagamento.
 
 $H_0:$ Churn não é independente do Método de Pagamento.
 

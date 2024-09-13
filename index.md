@@ -1,5 +1,7 @@
 # Portfólio de Dados
+
 ### Bem-vindo!
+
 Sou um profissional de vendas com 8 anos de experiência no setor imobiliário, tenho sólidos conhecimentos em otimização de resultados comerciais através de análise de dados e ferramentas como Excel, SQL e Power BI. 
 
 #### ⚒️ Linguagens e ferramentas
