@@ -59,6 +59,23 @@ Os dados podem ser encontrados no [Kaggle](https://www.kaggle.com/datasets/blast
 #### Métricas de avaliação
 - Acurácia, F1 Score, ROC AUC e MCC.
 
+## Análise Exploratória de Dados
+### Comportamento do target
+![target](assets/img/telco_churn/plot1.png)
+
+A média da taxa de Churn no mercado de telefonia é entre 3% e 5%, a Telco possui uma taxa altíssima em comparação com outras empresas.
+
+### Explorando hipóteses
+#### Churn x Tempo de Relacionamento
+Quanto mais tempo permanecemos consumindo um serviços, muitas vezes por apego ou comodidade evitamos seu cancelamento. Em inicio de contrato o comportamento de estar atento e menos paciente com erros é comum, vamos trabalhar em cima da seguinte hipótese:
+
+- $H_0:$ O tempo de relacionamento com a empresa não tem efeito significativo na probabilidade de churn.
+- $H_1:$ Pessoas com menor tempo de relacionamento com a empresa têm maior probabilidade de churn.
+
+![h1](assets/img/telco_churn/plot2.png)
+
+Rejeitamos $H_0$: Clientes com menor tempo de relacionamento com a empresa tem maior probabilidade de churn.
+
 ## Resultados
 ### Conclusões da Análise Exploratória
 - Clientes com menor tempo de relacionamento com a Telco tem maior probabilidade de Churn, são necessárias ações para aumentar a fidelização de clientes novos, especialmente no recorte dos primeiros 18 meses;
@@ -69,6 +86,8 @@ Os dados podem ser encontrados no [Kaggle](https://www.kaggle.com/datasets/blast
 **Insights pós-análise:** É possível criar um plano de ação em forma de campanhas de marketing e novos planos de serviço para diminuir a taxa de Churn na Telco, algumas opções seriam (1) oferecer um plano anual com desconto caso o meio de pagamento escolhido seja Bank transnfer ou Credit card, (2) revisar preço e dar descontos para clientes com mais tempo de relacionamento que possuem planos mais caros para renovação anual ou bianual.
 
 ### Métricas do modelo
+
+**Construção do modelo:** [Jupyter Notebook](https://github.com/datalopes1/telco_pred_churn/blob/main/notebooks/notebook.ipynb)
 
 |Métrica|Resultado|
 |---|---|
