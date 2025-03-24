@@ -3253,6 +3253,27 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
+			#intro .spotlight .image{
+				width: 100%;
+				max-width: 250px;
+				margin: 0 auto 2em auto;
+			}
+
+			#intro .spotlight .image img {
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+				border-radius: 50%;
+			}
+
+			#intro .spotlight {
+				flex-direction: column-reverse;
+			}
+
+			#intro .spotlight .content {
+				width: 100%;
+			}
+
 			#header {
 				padding: 3em 2em 0.1em 2em ;
 			}
