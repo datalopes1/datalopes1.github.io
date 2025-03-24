@@ -100,10 +100,10 @@ input, select, textarea {
 
 	body {
 		background-color: #935d8c;
-		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #395c75 10%, #130a24 95%);
+		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #395c75 10%, #130a24 95%);
+		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #395c75 10%, #130a24 95%);
+		background-image: url("images/overlay.png"), linear-gradient(45deg, #395c75 10%, #130a24 95%);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -393,11 +393,11 @@ input, select, textarea {
 		}
 
 		.row > .col-3 {
-			width: 25%;
+			width: 15%;
 		}
 
 		.row > .off-3 {
-			margin-left: 25%;
+			margin-left: 15%;
 		}
 
 		.row > .col-4 {
@@ -636,11 +636,11 @@ input, select, textarea {
 				}
 
 				.row > .col-3-xlarge {
-					width: 25%;
+					width: 15%;
 				}
 
 				.row > .off-3-xlarge {
-					margin-left: 25%;
+					margin-left: 15%;
 				}
 
 				.row > .col-4-xlarge {
@@ -881,11 +881,11 @@ input, select, textarea {
 				}
 
 				.row > .col-3-large {
-					width: 25%;
+					width: 15%;
 				}
 
 				.row > .off-3-large {
-					margin-left: 25%;
+					margin-left: 15%;
 				}
 
 				.row > .col-4-large {
@@ -1126,11 +1126,11 @@ input, select, textarea {
 				}
 
 				.row > .col-3-medium {
-					width: 25%;
+					width: 15%;
 				}
 
 				.row > .off-3-medium {
-					margin-left: 25%;
+					margin-left: 15%;
 				}
 
 				.row > .col-4-medium {
@@ -1371,11 +1371,11 @@ input, select, textarea {
 				}
 
 				.row > .col-3-small {
-					width: 25%;
+					width: 15%;
 				}
 
 				.row > .off-3-small {
-					margin-left: 25%;
+					margin-left: 15%;
 				}
 
 				.row > .col-4-small {
@@ -1616,11 +1616,11 @@ input, select, textarea {
 				}
 
 				.row > .col-3-xsmall {
-					width: 25%;
+					width: 15%;
 				}
 
 				.row > .off-3-xsmall {
-					margin-left: 25%;
+					margin-left: 15%;
 				}
 
 				.row > .col-4-xsmall {
@@ -2813,12 +2813,53 @@ input, select, textarea {
 		list-style: none;
 	}
 
-		.features li {
-			width: calc(33.33333% - 2em);
-			margin-left: 2em;
-			margin-top: 3em;
-			padding: 0;
-		}
+			.project-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 2em;
+				margin: 2em 0;
+			}
+			
+			.project-card {
+				background: rgba(255, 255, 255, 0.05);
+				border-radius: 0.5em;
+				padding: 0.5em;
+				text-align: center;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			
+			.project-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+			}
+			
+			.project-card .image {
+				display: block;
+				margin-bottom: 1.5em;
+			}
+
+			.project-card p {
+				font-size: 0.8em;
+				line-height: 1.5;
+				margin-bottom: 1.5em;
+				text-align: justify;
+			}
+			
+			.project-card .button {
+				font-size: 0.8em;
+			}
+			
+			.project-card img {
+				width: 100%;
+				border-radius: 0.25em;
+			}
+
+			.features li {
+				width: calc(33.33333% - 2em);
+				margin-left: 2em;
+				margin-top: 3em;
+				padding: 0;
+			}
 
 			.features li:nth-child(1), .features li:nth-child(2), .features li:nth-child(3) {
 				margin-top: 0;
@@ -2838,9 +2879,24 @@ input, select, textarea {
 					margin-top: 3em;
 				}
 
+			.image-container {
+				height: 200px;
+			}
+			
+			.projects-container {
+				grid-template-columns: 1fr;
+			}
+
 		}
 
+		
+
 		@media screen and (max-width: 736px) {
+
+			.image-container {
+				height: 180px;
+				aspect-ratio: 4/3;
+			}
 
 			.features {
 				width: 100%;
@@ -2940,6 +2996,10 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 736px) {
+
+			.project-grid {
+				grid-template-columns: 1fr;
+			}
 
 			.statistics {
 				display: block;
@@ -3783,3 +3843,4 @@ input, select, textarea {
 			}
 
 		}
+
