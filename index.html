@@ -1,179 +1,1090 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>André Lopes - Data Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Portfolio de André Lopes, Analista de Dados e Cientista de Dados especializado em Python, SQL e Power BI. Projetos de análise de dados, machine learning e business intelligence." />
-		<link rel="icon" href="images/favico.ico" type="image/x-icon">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de André Lopes, Analista de Dados e Cientista de Dados especializado em Python, SQL e Power BI. Projetos de análise de dados, machine learning e business intelligence." />
+    <title>André Lopes - Data Science & Analytics</title>
+    <link rel="icon" href="img/favicon3.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1>André Lopes</h1>
-						<p>Data Science & Analytics</p>
-					</header>
+        /* Header & Navigation */
+        .header {
+            background: linear-gradient(135deg, #4a4e69 10%, #130a24 95%);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#intro" class="active">Introdução</a></li>
-							<li><a href="#skills">Ferramentas</a></li>
-							<li><a href="#projects">Projetos</a></li>
-							<li><a href="powerbi.html">Dashboards</a></li>
-							<li><a href="about.html">Sobre mim</a></li>
-						</ul>
-					</nav>
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-				<!-- Main -->
-					<div id="main">
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
 
-						<!-- Introduction -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>Olá, sou André Lopes</h2>
-										</header>
-										<p>Analista de Dados Freelancer com formação em Engenharia de Produção, especializado em transformar dados complexos em insights estratégicos para negócios. Atualmente disponível para novos projetos e oportunidades que me permitam aplicar soluções data-driven para seus desafios.</p>
-										<ul class="actions">
-											<li><a href="about.html" class="button">Mais sobre mim</a></li>
-										</ul>
-									</div>
-									<span class="image"><img src="images/1735769384890.jpg" alt="selfie" /></span>
-								</div>
-							</section>
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-						<!-- Tech Stack -->
-							<section id="skills" class="main special">
-								<header class="major">
-									<h3>Ferramentas</h3>
-								</header>
-								<ul class="features">
-									<li>
-										<span class="icon"><img src="images/python-brands.svg" alt="Python" width="50" /></span>
-										<h4>Python</h4>
-                                        <p>Análise estatística, visualização de dados, soluções de Machine Learnining e Big Data</p>
-									</li>
-									<li>
-										<span class="icon"><img src="images/database-solid.svg" alt="SQL" width="50" /></span>
-										<h4>Modelagem de Dados</h4>
-                                        <p>Modelagem de Data Warehouses e Data Lakehouses em Cloud com BigQuery, dbt e Databricks</p>
-									</li>
-									<li>
-										<span class="icon"><img src="images/chart-simple-solid.svg" alt="Visualização de Dados" width="50" /></span>
-										<h4>Vizualição de Dados</h4>
-                                        <p>Criação de dashboards interativos e relatórios de Business Intelligence com Power BI e Looker Studio</p>
-									</li>
-								</ul>
-							</section>
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
 
-						<!-- Projects -->
-							<section id="projects" class="main special">
-								<header class="major">
-									<h2>Projetos em Destaque</h2>
-									<p>Projetos de analytics end-to-end</p>
-								</header>
-								<div class="project-grid">
-									<!-- Project 1 -->
-									<div class="project-card">
-										<span class="image"><img src="images/roasters.png" alt="Project 1" /></span>
-										<h3>Analisando as Vendas da Maven Roasters</h3>
-										<p>Com 3 unidades em NY, o staff da cafeteria Maven solicitou uma análise de seu desempenho comercial no primeiro semestre de 2023. No papel de um consultor, realizei uma análise utilizando SQL e construí um dashboard para monitoramento do rendimento em vendas.</p>
-										<ul class="actions special">
-											<li><a href="https://medium.com/@datalopes1/analisando-as-vendas-de-uma-rede-de-cafeterias-em-nova-iorque-b4adb36d3840" class="button icon brands fa-medium" target="_blank">Medium</a></li>
-											<li><a href="https://app.powerbi.com/view?r=eyJrIjoiZWNmMzZjNWYtOGQ0MC00ZTU2LTljNjktNjc3NzkzNTYzZjE1IiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9&source=post_page-----b4adb36d3840---------------------------------------" class="button icon solid fa-chart-line" target="_blank">Power BI</a></li>
-										</ul>
-									</div>
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
 
-									<!-- Project 2 -->
-									<div class="project-card">
-										<span class="image"><img src="images/chamadas.png" alt="Project 1" /></span>
-										<h3>Predição de Churn na Telco Telecom</h3>
-										<p>Atuando como um analista com a demanda de avaliar a retenção de clientes da Telco Telecom no terceiro trimestre de 2024, identifiquei padrões nos clientes que cancelam seus contratos, e criei um aplicativo web para calcular a probabilidade de cancelamento de linhas.</p>
-										<ul class="actions special">
-											<li><a href="https://telcotelecom-churn.streamlit.app/" class="button icon brands fa-python" target="_blank">Streamlit</a></li>
-											<li><a href="https://github.com/datalopes1/telecom_churn" class="button icon brands fa-github" target="_blank">Github</a></li>
-										</ul>
-									</div>
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
 
-									<!-- Project 3 -->
-									<div class="project-card">
-										<span class="image"><img src="images/scooter.png" alt="Project 3" /></span>
-										<h3>Um Data Warehouse para o Delivery Center</h3>
-										<p>Atuando como Analytics Engineer projetei um Data Warehouse utilizando a arquitetura medalhão para o Delivery Center, uma plataforma que integra lojistas e marketplaces em hubs por todo o Brasil, criando um ecossistema saudável para vendas de produtos e comida no varejo brasileiro.</p>
-										<ul class="actions special">
-											<li><a href="https://github.com/datalopes1/deliverycenter_dwh" class="button icon brands fa-github" target="_blank">Github</a></li>
-											<li><a href="https://app.powerbi.com/view?r=eyJrIjoiMGJmNTYwYTQtODIwYy00Y2FjLTliMGUtNDJjMGNjNDllNGZhIiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9" class="button icon solid fa-chart-line" target="_blank">Power BI</a></li>
-										</ul>
-									</div>
-									
-									<!-- Project 4 -->
-									<div class="project-card">
-										<span class="image"><img src="images/praia.png" alt="Project 4" /></span>
-										<h3>Análise do Mercado Imobiliário de Fortaleza/CE</h3>
-										<p>Com dados coletados através de web scraping do mercado imobiliário de uma das maiores capitais do Brasil, Fortaleza no estado do Ceará, criei uma aplicação web com insights e recomendações sobre como investir na Terra do Sol em 2025.</p>
-										<ul class="actions special">
-											<li><a href="https://pricingimoveis-fortaleza.streamlit.app/" class="button icon brands fa-python" target="_blank">Streamlit</a></li>
-											<li><a href="https://github.com/datalopes1/pricing_imoveis/" class="button icon brands fa-github" target="_blank">Github</a></li>
-										</ul>
-									</div>
-								</div>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="powerbi.html" class="button icon solid fa-chart-line">Dashboards do Power BI</a></li>
-										<li><a href="https://github.com/datalopes1/" class="button icon brands fa-github" target="_blank">Mais Projetos</a></li>
-									</ul>
-								</footer>
-							</section>
+        /* Main Content */
+        .main {
+            margin-top: 80px;
+        }
 
-					</div>
+        .section {
+            display: none;
+            min-height: calc(100vh - 80px);
+        }
 
+        .section.active {
+            display: block;
+        }
 
-				<!-- Footer -->
-				<footer id="footer">
-					<section>
-						<h2>Vamos conversar</h2>
-						<p>Estou sempre interessado em novas oportunidades de projetos, e colaborações, ou só falar sobre analytics. Sinta-se a vontade de falar comigo via e-mail ou mandar mensagem no LinkedIn</p>
-						<ul class="actions">
-							<li><a href="mailto:your.email@example.com" class="button">Envie um email</a></li>
-						</ul>
-					</section>
-					<section>
-						<h2>Informação de Contato</h2>
-						<dl class="alt">
-							<dt>Localização</dt>
-							<dd>Quixadá, Ceará – Brasil</dd>
-							<dt>Telefone</dt>
-							<dd>+55 88 99993-4237</dd>
-							<dt>Email</dt>
-							<dd><a href="mailto:datalopes1@proton.me">datalopes1@proton.me</a></dd>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
 
-						</dl>
-						<ul class="icons">
-							<li><a href="https://github.com/datalopes1" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-							<li><a href="https://linkedin.com/in/datalopes1" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
-						</ul>
-					</section>
-					<p class="copyright">&copy; 2025 André Lopes. All rights reserved.</p>
-				</footer>
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4a4e69 10%, #130a24 95%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-		</div>
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
 
-	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
 
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #130a24;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Tools Section */
+        .tools {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #130a24 0%, #764ba2 100%);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tool-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-category i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #130a24 0%, #4a4e69 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tool-category h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .tool-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .tool-tag {
+            background: linear-gradient(135deg, #130a24 0%, #4a4e69 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 4rem 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #130a24 0%, #4a4e69 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background: #f0f0f0;
+            color: #555;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: #130a24;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .project-link:hover {
+            color: #cecece;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #130a24 0%, #4a4e69 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            margin: 0 auto 2rem;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .certifications {
+            margin-top: 2rem;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .cert-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #130a24;
+            width: 30px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #130a24;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #130a24;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(102, 126, 234, 0.95);
+                flex-direction: column;
+                padding: 1rem;
+                backdrop-filter: blur(10px);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 2rem 3%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">André Lopes</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#dashboards" class="nav-link">Dashboards</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>André Lopes</h1>
+                        <p class="subtitle">Data Science & Analytics</p>
+                        <div class="cta-buttons">
+                            <a href="#dashboards" class="btn btn-primary">
+                                <i class="fas fa-chart-bar"></i>
+                                Ver Dashboards
+                            </a>
+                            <a href="#contato" class="btn btn-secondary">
+                                <i class="fas fa-envelope"></i>
+                                Entre em Contato
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools Section -->
+            <div class="tools">
+                <div class="container">
+                    <h2 class="section-title">Ferramentas</h2>
+                    <div class="tools-grid">
+                        <div class="tool-category">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Analytics & BI</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">Power BI</span>
+                                <span class="tool-tag">Looker Studio</span>
+                                <span class="tool-tag">Storytelling</span>
+                            </div>
+                        </div>
+                        <div class="tool-category">
+                            <i class="fas fa-code"></i>
+                            <h3>Programação</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">Python</span>
+                                <span class="tool-tag">Spark</span>
+                                <span class="tool-tag">SQL</span>
+                                <span class="tool-tag">Web Scraping</span>
+                                <span class="tool-tag">Git</span>
+                            </div>
+                        </div>
+                        <div class="tool-category">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Cloud & Data</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">Google BigQuery</span>
+                                <span class="tool-tag">Databricks</span>
+                                <span class="tool-tag">dbt</span>
+                                <span class="tool-tag">Data Warehouse</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Projects -->
+            <div class="projects">
+                <div class="container">
+                    <h2 class="section-title">Projetos em Destaque</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">
+                               <img src="img/roasters.png" alt="Cafeteria" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Análise Comercial e Dashboard de Vendas</h3>
+                                <p class="project-description">Analisei o desempenho comercial de 3 cafeterias em NY e construí um dashboard para apoiar decisões de vendas no 1º semestre de 2023.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Power BI</span>
+                                    <span class="project-tag">DAX</span>
+                                    <span class="project-tag">SQL</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://medium.com/@datalopes1/analisando-as-vendas-de-uma-rede-de-cafeterias-em-nova-iorque-b4adb36d3840" class="project-link" target="_blank">
+                                        <i class="fab fa-medium"></i>
+                                        Medium
+                                    </a>
+                                    <a href="https://app.powerbi.com/view?r=eyJrIjoiZWNmMzZjNWYtOGQ0MC00ZTU2LTljNjktNjc3NzkzNTYzZjE1IiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9&source=post_page-----b4adb36d3840---------------------------------------" class="project-link" target="_blank">
+                                        <i class="fab fa-microsoft"></i>
+                                        Power BI
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/chamadas.png" alt="Telefone" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Predição de Churn com Machine Learning</h3>
+                                <p class="project-description">Modelei a retenção de mais de 7.000 clientes com machine learning e desenvolvi um app para prever cancelamentos de contrato.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Python</span>
+                                    <span class="project-tag">Streamlit</span>
+                                    <span class="project-tag">ML</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/datalopes1/telecom_churn" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                        Github
+                                    </a>
+                                    <a href="https://telcotelecom-churn.streamlit.app/" class="project-link" target="_blank">
+                                        <i class="fas fa-code"></i>
+                                        Streamlit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/scooter.png" alt="Scooter" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Data Warehouse com Arquitetura Medalhão</h3>
+                                <p class="project-description">Modelei um Data Warehouse com arquitetura medalhão para uma plataforma que conecta lojistas e marketplaces no varejo nacional.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Python</span>
+                                    <span class="project-tag">dbt</span>
+                                    <span class="project-tag">BigQuery</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/datalopes1/deliverycenter_dwh" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                        Github
+                                    </a>
+                                    <a href="https://app.powerbi.com/view?r=eyJrIjoiMGJmNTYwYTQtODIwYy00Y2FjLTliMGUtNDJjMGNjNDllNGZhIiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9" class="project-link" target="_blank">
+                                        <i class="fab fa-microsoft"></i>
+                                        Power BI
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/praia.png" alt="Praia" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Radar Imobiliário de Fortaleza</h3>
+                                <p class="project-description">Extraí dados do mercado imobiliário de Fortaleza via web scraping e criei um app com insights e recomendações de investimento para 2025.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Python</span>
+                                    <span class="project-tag">Scrapy</span>
+                                    <span class="project-tag">dbt</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/datalopes1/pricing_imoveis/" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                        Github
+                                    </a>
+                                    <a href="https://pricingimoveis-fortaleza.streamlit.app/" class="project-link" target="_blank">
+                                        <i class="fas fa-code"></i>
+                                        Streamlit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboards Section -->
+        <section id="dashboards" class="section">
+            <div class="container">
+                <h2 class="section-title">Dashboards</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem;">
+                    Dashboards interativos criados para diferentes setores e necessidades de negócio
+                </p>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/maven.png" alt="Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dashboard de Vendas e Performance</h3>
+                            <p class="project-description">Dashboard de análise de vendas por loja e turno, com KPIs de pedidos, receita e ticket médio. Destaques para a matriz de calor por hora/dia, evolução da receita e ranking das categorias e produtos mais vendidos.</p>
+                            <div class="project-links">
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiZWNmMzZjNWYtOGQ0MC00ZTU2LTljNjktNjc3NzkzNTYzZjE1IiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9&source=post_page-----b4adb36d3840---------------------------------------" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver Dashboard
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/delivery-center.png" alt="Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dashboard Operacional de Vendas</h3>
+                            <p class="project-description">Dashboard interativo com filtros por estado, loja e canal, mostrando KPIs de receita, pedidos e tempo de entrega. Visualizações incluem desempenho geográfico, evolução temporal e segmentação de vendas por canal e tipo de produto.</p>
+                            <div class="project-links">
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiMGJmNTYwYTQtODIwYy00Y2FjLTliMGUtNDJjMGNjNDllNGZhIiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver Dashboard
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/mono.png" alt="Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dashboard de Defeitos e Manutenção</h3>
+                            <p class="project-description">Dashboard de manutenção com análise de 1.000 defeitos por tipo, severidade e localização. Inclui KPIs de custo médio e total de reparo, evolução temporal por categoria de falha e proporção de detecção por método de inspeção (manual, visual e automatizado).</p>
+                            <div class="project-links">
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiOWUzNTFjNzAtYjkyOS00YmVhLWFhZTktMmZkMmFlYjg5YWJlIiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver Dashboard
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/rfv.png" alt="Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dashboard de Vendas e Análise RFM</h3>
+                            <p class="project-description">Dashboard completo com visão geral de vendas por estado, categoria e vendedor. KPIs incluem receita total, pedidos completos e ticket médio. A análise RFM classifica mais de 96 mil clientes em segmentos como “Top Customers” e “Lost Customers”, otimizando decisões de marketing e retenção.</p>
+                            <div class="project-links">
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiMGU5NDQ1ZmEtMzNhOC00OGU3LTk4OTktY2EyY2M3ZGVmMDUxIiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver Dashboard
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/telco.png" alt="Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dashboard de Churn e Lifetime Value</h3>
+                            <p class="project-description">Aplicação web com dashboard analítico sobre evasão de clientes (churn), construído com dados de 7.000 usuários. KPIs incluem taxa de churn, valor de vida útil (LTV) e tempo médio de contrato. Visualizações exploram padrões de evasão por método de pagamento, tipo de contrato, mensalidade e tempo de relacionamento.</p>
+                            <div class="project-links">
+                                <a href="https://telcotelecom-churn.streamlit.app/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver Dashboard
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="section">
+            <div class="about">
+                <div class="container">
+                    <h2 class="section-title">Sobre Mim</h2>
+                    <div class="about-content">
+                        <div class="about-image">
+                            <div class="profile-image">
+                                <img src="img/pfp-2.png" alt="André Lopes" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div style="text-align: center;">
+                                <h3>André Lopes</h3>
+                                <p style="color: #130a24; font-weight: 600;">Data Analyst & BI Specialist</p>
+                            </div>
+                        </div>
+                        <div class="about-text">
+                            <h2>Olá! Sou o André 😉</h2>
+                            <p>
+                                Analista de Dados, graduado em Engenharia de Produção, com 8 anos de experiência no setor imobiliário. Meu foco é sempre extrair dos dados insights e informações que realmente impactam os resultados do negócio.
+                            </p>
+                            <p>
+                                Atuo com análise, visualização e modelagem de dados, desde a coleta com Python e SQL até a modelagem em nuvem com dbt, BigQuery e Databricks. Já trabalhei para clientes nacionais e internacionais, entregando dashboards que ajudam negócios a entender melhor seus resultados e planejar os próximos passos.
+                            </p>
+                            <p>
+                                Quer conversar sobre freelas, dados ou tech? Fique a vontade de entrar em contato! 
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="certifications">
+                        <h3 style="text-align: center; margin-bottom: 2rem; color: #333;">Certificações & Formação</h3>
+                        <div class="cert-grid">
+                            <div class="cert-item">
+                                <i class="fas fa-graduation-cap" style="color: #130a24; font-size: 2rem; margin-bottom: 1rem;"></i>
+                                <h4>Engenharia de Produção</h4>
+                                <p style="color: #666; font-size: 0.9rem;">Unicatólica</p>
+                            </div>
+                            <div class="cert-item">
+                                <i class="fab fa-microsoft" style="color: #130a24; font-size: 2rem; margin-bottom: 1rem;"></i>
+                                <h4>Formação Power BI</h4>
+                                <p style="color: #666; font-size: 0.9rem;">Data Science Academy</p>
+                            </div>
+                            <div class="cert-item">
+                                <i class="fab fa-google" style="color: #130a24; font-size: 2rem; margin-bottom: 1rem;"></i>
+                                <h4>Google Data Analytics</h4>
+                                <p style="color: #666; font-size: 0.9rem;">Google</p>
+                            </div>
+                            <div class="cert-item">
+                                <i class="fab fa-python" style="color: #130a24; font-size: 2rem; margin-bottom: 1rem;"></i>
+                                <h4>Formação Data Science</h4>
+                                <p style="color: #666; font-size: 0.9rem;">Alura</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <a href="https://docs.google.com/document/d/14LTA8KlUdIacOi98An233sAiG_E0ZN9Aqen_epT7OEg/edit?usp=sharing" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-download"></i>
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="section">
+            <div class="contact">
+                <div class="container">
+                    <h2 class="section-title">Entre em Contato</h2>
+                    <p style="text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem;">
+                        Vamos conversar sobre seu próximo projeto de dados
+                    </p>
+                    
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <h3>Informações de Contato</h3>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>datalopes1@proton.me</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin"></i>
+                                <div>
+                                    <h4>LinkedIn</h4>
+                                    <p>/in/datalopes1/</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <div>
+                                    <h4>GitHub</h4>
+                                    <p>github.com/datalopes1</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Disponibilidade</h4>
+                                    <p>Resposta em até 2 horas</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-form">
+                            <h3>Envie uma Mensagem</h3>
+                            <form action="https://formspree.io/f/xldbyeoj" method="POST">
+                                <div class="form-group">
+                                    <label for="name">Nome</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Assunto</label>
+                                    <input type="text" id="subject" name="subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Mensagem</label>
+                                    <textarea id="message" name="message" placeholder="Conte-me sobre seu projeto..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Enviar Mensagem
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/datalopes1/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/datalopes1" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:datalopes1@proton.me" class="social-link" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 André Lopes. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinksContainer = document.getElementById('navLinks');
+
+        // Handle navigation clicks
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links and sections
+                navLinks.forEach(l => l.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Show corresponding section
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+                
+                // Close mobile menu
+                navLinksContainer.classList.remove('active');
+            });
+        });
+
+        // Handle mobile menu toggle
+        mobileToggle.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('active');
+        });
+
+        // Handle CTA buttons in hero section
+        document.querySelectorAll('.cta-buttons a').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = button.getAttribute('href').substring(1);
+                
+                // Remove active from all nav links and sections
+                navLinks.forEach(l => l.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+                
+                // Add active to target nav link and section
+                const targetNavLink = document.querySelector(`[href="#${targetId}"]`);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetNavLink && targetSection) {
+                    targetNavLink.classList.add('active');
+                    targetSection.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe project cards for animation
+        document.querySelectorAll('.project-card, .tool-category').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
