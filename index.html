@@ -1,1104 +1,1143 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de André Lopes, Analista de Dados e Cientista de Dados especializado em Python, SQL e Power BI. Projetos de análise de dados, machine learning e business intelligence." />
-    <title>André Lopes - Data Science & Analytics</title>
-    <link rel="icon" href="img/favicon3.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Header & Navigation */
-        .header {
-            background: linear-gradient(135deg, #4a4e69 10%, #130a24 95%);
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Main Content */
-        .main {
-            margin-top: 80px;
-        }
-
-        .section {
-            display: none;
-            min-height: calc(100vh - 80px);
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 5%;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #4a4e69 10%, #130a24 95%);
-            color: white;
-            padding: 6rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #130a24;
-        }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: 2px solid rgba(255,255,255,0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        /* Tools Section */
-        .tools {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(135deg, #130a24 0%, #764ba2 100%);
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .tool-category {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .tool-category:hover {
-            transform: translateY(-5px);
-        }
-
-        .tool-category i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #130a24 0%, #4a4e69 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .tool-category h3 {
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .tool-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-
-        .tool-tag {
-            background: linear-gradient(135deg, #130a24 0%, #4a4e69 100%);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Projects Section */
-        .projects {
-            padding: 4rem 0;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #eee;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .project-image {
-            height: 200px;
-            background: linear-gradient(135deg, #130a24 0%, #4a4e69 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .project-description {
-            color: #666;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-tag {
-            background: #f0f0f0;
-            color: #555;
-            padding: 0.2rem 0.6rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            color: #130a24;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .project-link:hover {
-            color: #cecece;
-        }
-
-        /* About Section */
-        .about {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .profile-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #130a24 0%, #4a4e69 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
-            margin: 0 auto 2rem;
-        }
-
-        .about-text h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .certifications {
-            margin-top: 2rem;
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .cert-item {
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 4rem 0;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-
-        .contact-item i {
-            font-size: 1.5rem;
-            color: #130a24;
-            width: 30px;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #eee;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #130a24;
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        .footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-link {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-link:hover {
-            color: #130a24;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .mobile-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(19, 10, 36, 0.95);
-                flex-direction: column;
-                padding: 1rem;
-                backdrop-filter: blur(10px);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                padding: 2rem 3%;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>André Lopes — Analista de Dados & BI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080b10;
+    --bg-2: #0d1117;
+    --bg-3: #111620;
+    --border: rgba(255,255,255,0.06);
+    --border-hover: rgba(0, 212, 170, 0.35);
+    --accent: #00d4aa;
+    --accent-dim: rgba(0, 212, 170, 0.12);
+    --accent-glow: rgba(0, 212, 170, 0.25);
+    --text-primary: #f0f4f8;
+    --text-secondary: #8892a4;
+    --text-muted: #4a5568;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+  /* NOISE TEXTURE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 5%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s;
+    border-bottom: 1px solid transparent;
+  }
+
+  nav.scrolled {
+    background: rgba(8, 11, 16, 0.82);
+    backdrop-filter: blur(20px);
+    border-bottom-color: var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text-primary); }
+
+  /* HERO */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 5% 80px;
+    overflow: hidden;
+  }
+
+  /* Radial glow bg */
+  #hero::after {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(0, 212, 170, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Grid dots pattern */
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+  }
+
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.1s;
+  }
+
+  .hero-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.2s;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.01em;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.3s;
+  }
+
+  .hero-title .highlight {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .hero-bio {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 560px;
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.4s;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.5s;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #080b10;
+    border: 1px solid var(--accent);
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.8s;
+  }
+
+  .scroll-line {
+    width: 40px;
+    height: 1px;
+    background: var(--text-muted);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-line::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent);
+    animation: scrollAnim 2s ease infinite;
+  }
+
+  /* SECTION BASE */
+  section {
+    padding: 100px 5%;
+    position: relative;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0.75rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* SOBRE */
+  #sobre {
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 3.5rem;
+  }
+
+  .sobre-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent) 0%, #0097a7 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: #080b10;
+    margin-bottom: 1.75rem;
+    flex-shrink: 0;
+  }
+
+  .sobre-text p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 1.25rem;
+  }
+
+  .sobre-text p strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .sobre-skills h3 {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+
+  .sobre-skills h3:first-child { margin-top: 0; }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.3rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    background: var(--bg-3);
+    color: var(--text-secondary);
+    transition: all 0.2s;
+  }
+
+  .tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
+  }
+
+  .tag-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  /* PROJETOS */
+  #projetos { background: var(--bg); }
+
+  .projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .project-card {
+    position: relative;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--card-accent, var(--accent)), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: 0 20px 50px rgba(0, 212, 170, 0.08);
+  }
+
+  .project-card:hover::before { opacity: 1; }
+
+  .project-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .project-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .project-ext-link {
+    color: var(--text-muted);
+    transition: color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .project-ext-link:hover { color: var(--accent); }
+
+  .project-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 300;
+    flex: 1;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .stack-tag {
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: auto;
+    transition: gap 0.2s;
+  }
+
+  .project-link:hover { gap: 10px; }
+
+  /* Variantes de cor por projeto */
+  .card-dwh { --card-accent: #00d4aa; }
+  .card-churn { --card-accent: #60a5fa; }
+  .card-imoveis { --card-accent: #f59e0b; }
+
+  .icon-dwh { background: rgba(0, 212, 170, 0.12); color: var(--accent); }
+  .icon-churn { background: rgba(96, 165, 250, 0.12); color: #60a5fa; }
+  .icon-imoveis { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
+
+  .st-python { background: rgba(0,212,170,0.12); color: var(--accent); }
+  .st-dbt { background: rgba(251, 113, 133, 0.12); color: #fb7185; }
+  .st-pg { background: rgba(96, 165, 250, 0.12); color: #60a5fa; }
+  .st-pbi { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
+  .st-ml { background: rgba(167, 139, 250, 0.12); color: #a78bfa; }
+  .st-streamlit { background: rgba(248, 113, 113, 0.12); color: #f87171; }
+  .st-scrapy { background: rgba(74, 222, 128, 0.12); color: #4ade80; }
+
+  /* EXPERIÊNCIA */
+  #experiencia {
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .timeline {
+    margin-top: 3.5rem;
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 3rem;
+  }
+
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg-2);
+    box-shadow: 0 0 10px var(--accent-glow);
+    transform: translateX(-4px);
+  }
+
+  .timeline-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-period {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+  }
+
+  .timeline-company {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  .timeline-role {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  /* CONTATO */
+  #contato { background: var(--bg); }
+
+  .contato-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-top: 3.5rem;
+  }
+
+  .contato-text p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.9rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-2);
+    transition: all 0.25s;
+    font-size: 0.9rem;
+  }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
+    transform: translateX(4px);
+  }
+
+  .contact-link-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--bg-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.25s;
+  }
+
+  .contact-link:hover .contact-link-icon {
+    background: var(--accent-dim);
+  }
+
+  .contact-link-text { flex: 1; }
+  .contact-link-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .contact-link-value {
+    font-weight: 500;
+    color: inherit;
+  }
+
+  .contato-cta {
+    padding: 2.5rem;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contato-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(0,212,170,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .contato-cta h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .contato-cta p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 1.75rem;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 5%;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  footer a {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: var(--accent); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollAnim {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 6%; }
+    .nav-links { display: none; }
+    section { padding: 72px 6%; }
+    #hero { padding: 100px 6% 60px; }
+    .sobre-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contato-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-scroll { left: 6%; }
+    .projetos-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-actions { flex-direction: column; }
+    .btn { justify-content: center; }
+    .timeline { padding-left: 1.5rem; }
+    .timeline-item::before { left: -1.5rem; }
+  }
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <a href="#" class="logo">André Lopes</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#dashboards" class="nav-link">Dashboards</a></li>
-                <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                <li><a href="#contato" class="nav-link">Contato</a></li>
-            </ul>
-            <button class="mobile-toggle" id="mobileToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-    </header>
 
-    <!-- Main Content -->
-    <main class="main">
-        
-        <!-- Home Section -->
-        <section id="home" class="section active">
-            <div class="hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1>André Lopes</h1>
-                        <p class="subtitle">Data Science & Analytics</p>
-                        <div class="cta-buttons">
-                            <a href="#dashboards" class="btn btn-primary">
-                                <i class="fas fa-chart-bar"></i>
-                                Ver Dashboards
-                            </a>
-                            <a href="#contato" class="btn btn-secondary">
-                                <i class="fas fa-envelope"></i>
-                                Entre em Contato
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">AL<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#projetos">Projetos</a></li>
+    <li><a href="#experiencia">Experiência</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
 
-            <!-- Tools Section -->
-            <div class="tools">
-                <div class="container">
-                    <h2 class="section-title">Ferramentas</h2>
-                    <div class="tools-grid">
-                        <div class="tool-category">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>Analytics & BI</h3>
-                            <div class="tool-list">
-                                <span class="tool-tag">Power BI</span>
-                                <span class="tool-tag">Looker Studio</span>
-                                <span class="tool-tag">Storytelling</span>
-                            </div>
-                        </div>
-                        <div class="tool-category">
-                            <i class="fas fa-code"></i>
-                            <h3>Programação</h3>
-                            <div class="tool-list">
-                                <span class="tool-tag">Python</span>
-                                <span class="tool-tag">Spark</span>
-                                <span class="tool-tag">SQL</span>
-                            </div>
-                        </div>
-                        <div class="tool-category">
-                            <i class="fas fa-cloud"></i>
-                            <h3>Cloud & Data</h3>
-                            <div class="tool-list">
-                                <span class="tool-tag">Google BigQuery</span>
-                                <span class="tool-tag">Databricks</span>
-                                <span class="tool-tag">dbt</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Analytics & BI</div>
+    <h1 class="hero-name">André<br>Lopes</h1>
+    <p class="hero-title">
+      Transformando dados em <span class="highlight">decisões de impacto</span>
+    </p>
+    <p class="hero-bio">
+      Profissional com experiência em análise, modelagem e visualização de dados — da coleta com Python e SQL até pipelines em nuvem com dbt, BigQuery e Databricks. Graduado em Engenharia de Produção com sólida atuação no setor imobiliário e de dados.
+    </p>
+    <div class="hero-actions">
+      <a href="#projetos" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+        Ver Projetos
+      </a>
+      <a href="https://www.linkedin.com/in/datalopes1/" target="_blank" rel="noopener" class="btn btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/datalopes1" target="_blank" rel="noopener" class="btn btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    scroll
+  </div>
+</section>
 
-            <!-- Featured Projects -->
-            <div class="projects">
-                <div class="container">
-                    <h2 class="section-title">Projetos em Destaque</h2>
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <div class="project-image">
-                               <img src="img/roasters.png" alt="Cafeteria" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Análise Comercial e Dashboard de Vendas</h3>
-                                <p class="project-description">Analisei o desempenho comercial de 3 cafeterias em NY e construí um dashboard para apoiar decisões de vendas no 1º semestre de 2023.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Power BI</span>
-                                    <span class="project-tag">SQL</span>
-                                    <span class="project-tag">DAX</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://medium.com/@datalopes1/analisando-as-vendas-de-uma-rede-de-cafeterias-em-nova-iorque-b4adb36d3840" class="project-link" target="_blank">
-                                        <i class="fab fa-medium"></i>
-                                        Medium
-                                    </a>
-                                    <a href="https://app.powerbi.com/view?r=eyJrIjoiZWNmMzZjNWYtOGQ0MC00ZTU2LTljNjktNjc3NzkzNTYzZjE1IiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9&source=post_page-----b4adb36d3840---------------------------------------" class="project-link" target="_blank">
-                                        <i class="fab fa-microsoft"></i>
-                                        Power BI
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="reveal">
+    <div class="section-label">01 — Sobre mim</div>
+    <h2 class="section-title">Da engenharia<br>à engenharia de dados</h2>
+  </div>
+  <div class="sobre-grid">
+    <div class="sobre-text reveal reveal-delay-1">
+      <div class="sobre-avatar">AL</div>
+      <p>
+        Olá, sou <strong>André Lopes</strong> — Analista de Dados com formação em Engenharia de Produção e mais de <strong>8 anos de experiência no setor imobiliário</strong>. Ao longo dessa trajetória, desenvolvi a capacidade de enxergar processos de ponta a ponta e traduzir complexidade em clareza.
+      </p>
+      <p>
+        Meu trabalho vai desde a <strong>ingestão e transformação de dados</strong> até a construção de pipelines em nuvem utilizando plataformas como BigQuery e Databricks. Entrego dashboards e análises que ajudam times a tomar decisões melhores e mais rápidas.
+      </p>
+      <p>
+        Já atendi <strong>clientes nacionais e internacionais</strong>, combinando rigor analítico com storytelling de dados — porque números precisam contar histórias que as pessoas consigam agir sobre elas.
+      </p>
+    </div>
+    <div class="sobre-skills reveal reveal-delay-2">
+      <h3>Visualização de Dados</h3>
+      <div class="tags">
+        <span class="tag"><span class="tag-dot" style="background:#f59e0b"></span>Power BI</span>
+        <span class="tag"><span class="tag-dot" style="background:#4285f4"></span>Looker Studio</span>
+        <span class="tag"><span class="tag-dot" style="background:#00d4aa"></span>Streamlit</span>
+      </div>
 
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="img/chamadas.png" alt="Telefone" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Predição de Churn com Machine Learning</h3>
-                                <p class="project-description">Modelei a retenção de mais de 7.000 clientes com machine learning e desenvolvi um app para prever cancelamentos de contrato.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Python</span>
-                                    <span class="project-tag">Streamlit</span>
-                                    <span class="project-tag">ML</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/datalopes1/telecom_churn" class="project-link" target="_blank">
-                                        <i class="fab fa-github"></i>
-                                        Github
-                                    </a>
-                                    <a href="https://telcotelecom-churn.streamlit.app/" class="project-link" target="_blank">
-                                        <i class="fas fa-code"></i>
-                                        Streamlit
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+      <h3>Linguagens de Programação</h3>
+      <div class="tags">
+        <span class="tag"><span class="tag-dot" style="background:#3b82f6"></span>Python</span>
+        <span class="tag"><span class="tag-dot" style="background:#00d4aa"></span>SQL</span>
+      </div>
 
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="img/scooter.png" alt="Scooter" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Data Warehouse com Arquitetura Medalhão</h3>
-                                <p class="project-description">Modelei um Data Warehouse com arquitetura medalhão para uma plataforma que conecta lojistas e marketplaces no varejo nacional.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Python</span>
-                                    <span class="project-tag">Power BI</span>
-                                    <span class="project-tag">dbt</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/datalopes1/deliverycenter_dwh" class="project-link" target="_blank">
-                                        <i class="fab fa-github"></i>
-                                        Github
-                                    </a>
-                                    <a href="https://app.powerbi.com/view?r=eyJrIjoiMGJmNTYwYTQtODIwYy00Y2FjLTliMGUtNDJjMGNjNDllNGZhIiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9" class="project-link" target="_blank">
-                                        <i class="fab fa-microsoft"></i>
-                                        Power BI
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+      <h3>Cloud</h3>
+      <div class="tags">
+        <span class="tag"><span class="tag-dot" style="background:#4285f4"></span>Google BigQuery</span>
+        <span class="tag"><span class="tag-dot" style="background:#e34a00"></span>Databricks</span>
+      </div>
 
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="img/praia.png" alt="Praia" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Radar Imobiliário de Fortaleza</h3>
-                                <p class="project-description">Extraí dados do mercado imobiliário de Fortaleza via web scraping e criei um app com insights e recomendações de investimento para 2025.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Python</span>
-                                    <span class="project-tag">Streamlit</span>
-                                    <span class="project-tag">Web Scraping</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/datalopes1/pricing_imoveis/" class="project-link" target="_blank">
-                                        <i class="fab fa-github"></i>
-                                        Github
-                                    </a>
-                                    <a href="https://pricingimoveis-fortaleza.streamlit.app/" class="project-link" target="_blank">
-                                        <i class="fas fa-code"></i>
-                                        Streamlit
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <h3>Formação</h3>
+      <div class="tags">
+        <span class="tag">Engenharia de Produção — Unicatólica</span>
+        <span class="tag">Formação Data Science — Alura</span>
+        <span class="tag">Google Data Analytics Certificate</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Dashboards Section -->
-        <section id="dashboards" class="section">
-            <div class="container">
-                <h2 class="section-title">Dashboards</h2>
-                <p style="text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem;">
-                    Dashboards interativos criados para diferentes setores e necessidades de negócio
-                </p>
-                
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="img/maven.png" alt="Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Dashboard de Vendas e Performance</h3>
-                            <p class="project-description">Dashboard de análise de vendas por loja e turno, com KPIs de pedidos, receita e ticket médio. Destaques para a matriz de calor por hora/dia, evolução da receita e ranking das categorias e produtos mais vendidos.</p>
-                            <div class="project-links">
-                                <a href="https://app.powerbi.com/view?r=eyJrIjoiZWNmMzZjNWYtOGQ0MC00ZTU2LTljNjktNjc3NzkzNTYzZjE1IiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9&source=post_page-----b4adb36d3840---------------------------------------" class="project-link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    Ver Dashboard
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+<!-- PROJETOS -->
+<section id="projetos">
+  <div class="reveal">
+    <div class="section-label">02 — Projetos</div>
+    <h2 class="section-title">Casos reais,<br>dados reais</h2>
+    <p class="section-sub">Projetos que cobrem o ciclo completo: da coleta ao insight, passando por modelagem, engenharia e visualização.</p>
+  </div>
 
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="img/delivery-center.png" alt="Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Dashboard Operacional de Vendas</h3>
-                            <p class="project-description">Dashboard interativo com filtros por estado, loja e canal, mostrando KPIs de receita, pedidos e tempo de entrega. Visualizações incluem desempenho geográfico, evolução temporal e segmentação de vendas por canal e tipo de produto.</p>
-                            <div class="project-links">
-                                <a href="https://app.powerbi.com/view?r=eyJrIjoiMGJmNTYwYTQtODIwYy00Y2FjLTliMGUtNDJjMGNjNDllNGZhIiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9" class="project-link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    Ver Dashboard
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+  <div class="projetos-grid">
 
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="img/mono.png" alt="Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Dashboard de Defeitos e Manutenção</h3>
-                            <p class="project-description">Dashboard de manutenção com análise de 1.000 defeitos por tipo, severidade e localização. Inclui KPIs de custo médio e total de reparo, evolução temporal por categoria de falha e proporção de detecção por método de inspeção (manual, visual e automatizado).</p>
-                            <div class="project-links">
-                                <a href="https://app.powerbi.com/view?r=eyJrIjoiOWUzNTFjNzAtYjkyOS00YmVhLWFhZTktMmZkMmFlYjg5YWJlIiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9" class="project-link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    Ver Dashboard
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="img/rfv.png" alt="Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Dashboard de Vendas e Análise RFM</h3>
-                            <p class="project-description">Dashboard completo com visão geral de vendas por estado, categoria e vendedor. KPIs incluem receita total, pedidos completos e ticket médio. A análise RFM classifica mais de 96 mil clientes em segmentos como “Top Customers” e “Lost Customers”, otimizando decisões de marketing e retenção.</p>
-                            <div class="project-links">
-                                <a href="https://app.powerbi.com/view?r=eyJrIjoiMGU5NDQ1ZmEtMzNhOC00OGU3LTk4OTktY2EyY2M3ZGVmMDUxIiwidCI6ImJmOWUzNDgwLTkyM2UtNDNmMS04OTE1LTlmMmY3YjY2NTc0MSJ9" class="project-link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    Ver Dashboard
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="img/pricing.png" alt="Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Dashboard Interativo de Preços Imobiliários</h3>
-                            <p class="project-description">Dashboard em Streamlit com dados extraídos via web scraping sobre imóveis em Fortaleza/CE. Exibe volume total de imóveis, valor de vendas, preço mediano e distribuição por tipo. Inclui análises de correlação entre área e preço, comparação entre bairros e visualização filtrável por tipo, localização e faixa de valor.</p>
-                            <div class="project-links">
-                                <a href="https://pricingimoveis-fortaleza.streamlit.app/" class="project-link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    Ver Dashboard
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="img/telco.png" alt="Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        
-                        <div class="project-content">
-                            <h3 class="project-title">Dashboard de Churn e Lifetime Value</h3>
-                            <p class="project-description">Aplicação web com dashboard analítico sobre evasão de clientes (churn), construído com dados de 7.000 usuários. KPIs incluem taxa de churn, valor de vida útil (LTV) e tempo médio de contrato. Visualizações exploram padrões de evasão por método de pagamento, tipo de contrato, mensalidade e tempo de relacionamento.</p>
-                            <div class="project-links">
-                                <a href="https://telcotelecom-churn.streamlit.app/" class="project-link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    Ver Dashboard
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="sobre" class="section">
-            <div class="about">
-                <div class="container">
-                    <h2 class="section-title">Sobre Mim</h2>
-                    <div class="about-content">
-                        <div class="about-image">
-                            <div class="profile-image">
-                                <img src="img/pfp-2.png" alt="André Lopes" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-                            </div>
-                            <div style="text-align: center;">
-                                <h3>André Lopes</h3>
-                                <p style="color: #130a24; font-weight: 600;">Data Analyst & BI Specialist</p>
-                            </div>
-                        </div>
-                        <div class="about-text">
-                            <h2>Olá! Sou o André 😉</h2>
-                            <p>
-                                Analista de Dados, graduado em Engenharia de Produção, com 8 anos de experiência no setor imobiliário. Meu foco é sempre extrair dos dados insights e informações que realmente impactam os resultados do negócio.
-                            </p>
-                            <p>
-                                Atuo com análise, visualização e modelagem de dados, desde a coleta com Python e SQL até a modelagem em nuvem com dbt, BigQuery e Databricks. Já trabalhei para clientes nacionais e internacionais, entregando dashboards que ajudam negócios a entender melhor seus resultados e planejar os próximos passos.
-                            </p>
-                            <p>
-                                Quer conversar sobre freelas, dados ou tech? Fique a vontade de entrar em contato! 
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="certifications">
-                        <h3 style="text-align: center; margin-bottom: 2rem; color: #333;">Certificações & Formação</h3>
-                        <div class="cert-grid">
-                            <div class="cert-item">
-                                <i class="fas fa-graduation-cap" style="color: #130a24; font-size: 2rem; margin-bottom: 1rem;"></i>
-                                <h4>Engenharia de Produção</h4>
-                                <p style="color: #666; font-size: 0.9rem;">Unicatólica</p>
-                            </div>
-                            <div class="cert-item">
-                                <i class="fab fa-microsoft" style="color: #130a24; font-size: 2rem; margin-bottom: 1rem;"></i>
-                                <h4>Formação Power BI</h4>
-                                <p style="color: #666; font-size: 0.9rem;">Data Science Academy</p>
-                            </div>
-                            <div class="cert-item">
-                                <i class="fab fa-google" style="color: #130a24; font-size: 2rem; margin-bottom: 1rem;"></i>
-                                <h4>Google Data Analytics</h4>
-                                <p style="color: #666; font-size: 0.9rem;">Google</p>
-                            </div>
-                            <div class="cert-item">
-                                <i class="fab fa-python" style="color: #130a24; font-size: 2rem; margin-bottom: 1rem;"></i>
-                                <h4>Formação Data Science</h4>
-                                <p style="color: #666; font-size: 0.9rem;">Alura</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="text-align: center; margin-top: 3rem;">
-                        <a href="https://docs.google.com/document/d/14LTA8KlUdIacOi98An233sAiG_E0ZN9Aqen_epT7OEg/edit?usp=sharing" class="btn btn-primary" target="_blank">
-                            <i class="fas fa-download"></i>
-                            Download CV
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contato" class="section">
-            <div class="contact">
-                <div class="container">
-                    <h2 class="section-title">Entre em Contato</h2>
-                    <p style="text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem;">
-                        Vamos conversar sobre seu próximo projeto de dados
-                    </p>
-                    
-                    <div class="contact-content">
-                        <div class="contact-info">
-                            <h3>Informações de Contato</h3>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <h4>Email</h4>
-                                    <p>datalopes1@proton.me</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-linkedin"></i>
-                                <div>
-                                    <h4>LinkedIn</h4>
-                                    <p>/in/datalopes1/</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-github"></i>
-                                <div>
-                                    <h4>GitHub</h4>
-                                    <p>/datalopes1</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-clock"></i>
-                                <div>
-                                    <h4>Disponibilidade</h4>
-                                    <p>Resposta em até 2 horas</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="contact-form">
-                            <h3>Envie uma Mensagem</h3>
-                            <form action="https://formspree.io/f/xldbyeoj" method="POST">
-                                <div class="form-group">
-                                    <label for="name">Nome</label>
-                                    <input type="text" id="name" name="name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="subject">Assunto</label>
-                                    <input type="text" id="subject" name="subject" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Mensagem</label>
-                                    <textarea id="message" name="message" placeholder="Conte-me sobre seu projeto..." required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary" style="width: 100%;">
-                                    <i class="fas fa-paper-plane"></i>
-                                    Enviar Mensagem
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/datalopes1/" class="social-link" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/datalopes1" class="social-link" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:datalopes1@proton.me" class="social-link" target="_blank">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-            <p>&copy; 2025 André Lopes. Todos os direitos reservados.</p>
+    <!-- Card 1: Data Warehouse -->
+    <article class="project-card card-dwh reveal reveal-delay-1">
+      <div class="project-card-header">
+        <div class="project-icon icon-dwh">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
         </div>
-    </footer>
+        <a href="https://github.com/datalopes1/deliverycenter_dwh" target="_blank" rel="noopener" class="project-ext-link" aria-label="Ver repositório">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <h3 class="project-name">Data Warehouse — Delivery Center</h3>
+      <p class="project-desc">
+        Construção de um Data Warehouse completo para uma plataforma que conecta lojistas e marketplaces no varejo brasileiro. Arquitetura medalhão (Bronze → Silver → Gold) com modelagem dimensional, ingestão de dados de CSVs, transformações via dbt e dashboard analítico no Power BI.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag st-python">Python</span>
+        <span class="stack-tag st-dbt">dbt</span>
+        <span class="stack-tag st-pg">PostgreSQL</span>
+        <span class="stack-tag st-pbi">Power BI</span>
+      </div>
+      <a href="https://github.com/datalopes1/deliverycenter_dwh" target="_blank" rel="noopener" class="project-link">
+        Ver repositório
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </article>
 
-    <script>
-        // Navigation functionality
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('.section');
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navLinksContainer = document.getElementById('navLinks');
+    <!-- Card 2: Telecom Churn -->
+    <article class="project-card card-churn reveal reveal-delay-2">
+      <div class="project-card-header">
+        <div class="project-icon icon-churn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <a href="https://github.com/datalopes1/telecom_churn" target="_blank" rel="noopener" class="project-ext-link" aria-label="Ver repositório">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <h3 class="project-name">Predição de Churn — Telecom</h3>
+      <p class="project-desc">
+        Modelagem de churn para mais de 7.000 clientes de uma empresa de telecomunicações. Análise exploratória completa, feature engineering avançado com Optuna e CatBoost, e aplicação web interativa em Streamlit para análise e predição em tempo real — disponível publicamente no Streamlit Cloud.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag st-python">Python</span>
+        <span class="stack-tag st-ml">CatBoost</span>
+        <span class="stack-tag st-ml">Scikit-learn</span>
+        <span class="stack-tag st-streamlit">Streamlit</span>
+      </div>
+      <a href="https://github.com/datalopes1/telecom_churn" target="_blank" rel="noopener" class="project-link">
+        Ver repositório
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </article>
 
-        // Handle navigation clicks
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                // Remove active class from all links and sections
-                navLinks.forEach(l => l.classList.remove('active'));
-                sections.forEach(s => s.classList.remove('active'));
-                
-                // Add active class to clicked link
-                link.classList.add('active');
-                
-                // Show corresponding section
-                const targetId = link.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.classList.add('active');
-                }
-                
-                // Close mobile menu
-                navLinksContainer.classList.remove('active');
-            });
-        });
+    <!-- Card 3: Pricing Imóveis -->
+    <article class="project-card card-imoveis reveal reveal-delay-3">
+      <div class="project-card-header">
+        <div class="project-icon icon-imoveis">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <a href="https://github.com/datalopes1/pricing_imoveis" target="_blank" rel="noopener" class="project-ext-link" aria-label="Ver repositório">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <h3 class="project-name">Radar Imobiliário de Fortaleza</h3>
+      <p class="project-desc">
+        Exploração do mercado imobiliário de Fortaleza/CE via web scraping com Scrapy em portais como Lopes e Chaves na Mão. Análise de correlações entre localização, área e preço, com aplicação interativa em Streamlit para insights e recomendações de investimento — mercado com VGV de ~R$ 8 bilhões.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag st-python">Python</span>
+        <span class="stack-tag st-scrapy">Scrapy</span>
+        <span class="stack-tag st-streamlit">Streamlit</span>
+        <span class="stack-tag st-pg">DuckDB</span>
+      </div>
+      <a href="https://github.com/datalopes1/pricing_imoveis" target="_blank" rel="noopener" class="project-link">
+        Ver repositório
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </article>
 
-        // Handle mobile menu toggle
-        mobileToggle.addEventListener('click', () => {
-            navLinksContainer.classList.toggle('active');
-        });
+  </div>
+</section>
 
-        // Handle CTA buttons in hero section
-        document.querySelectorAll('.cta-buttons a').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = button.getAttribute('href').substring(1);
-                
-                // Remove active from all nav links and sections
-                navLinks.forEach(l => l.classList.remove('active'));
-                sections.forEach(s => s.classList.remove('active'));
-                
-                // Add active to target nav link and section
-                const targetNavLink = document.querySelector(`[href="#${targetId}"]`);
-                const targetSection = document.getElementById(targetId);
-                
-                if (targetNavLink && targetSection) {
-                    targetNavLink.classList.add('active');
-                    targetSection.classList.add('active');
-                }
-            });
-        });
+<!-- EXPERIÊNCIA -->
+<section id="experiencia">
+  <div class="reveal">
+    <div class="section-label">03 — Experiência</div>
+    <h2 class="section-title">Trajetória</h2>
+    <p class="section-sub">Uma carreira construída na interseção entre operações, negócios e dados.</p>
+  </div>
 
-        // Smooth scrolling for better UX
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+  <div class="timeline">
 
-        // Add some animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    <div class="timeline-item reveal reveal-delay-1">
+      <div class="timeline-meta">
+        <span class="timeline-period">2024 — Atual</span>
+        <span class="timeline-company">Democrata Calçados e Artefatos de Couro</span>
+      </div>
+      <div class="timeline-role">Analista de Dados</div>
+      <p class="timeline-desc">
+        Durante minha transição de carreira atuei como freelancer no desenvolvimento de projetos de dados ponta a ponta para clientes nacionais e internacionais — do insight ao dashboard. Atualmente ocupo a posição de Analista de Dados na industria calçadista, em uma das líderes do mercado nacional.  
+      </p>
+    </div>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+    <div class="timeline-item reveal reveal-delay-2">
+      <div class="timeline-meta">
+        <span class="timeline-period">2016 — 2024</span>
+        <span class="timeline-company">Setor Imobiliário</span>
+      </div>
+      <div class="timeline-role">Atuação no Mercado Imobiliário</div>
+      <p class="timeline-desc">
+        Mais de 8 anos de experiência no setor imobiliário, desenvolvendo expertise em análise de mercado, processos operacionais e gestão de dados. Essa vivência formou a base para a transição para análise de dados, com domínio profundo sobre indicadores de negócio, precificação e comportamento de mercado — especialmente em Quixadá/CE e no Sertão Central Cearense.
+      </p>
+    </div>
 
-        // Observe project cards for animation
-        document.querySelectorAll('.project-card, .tool-category').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-    </script>
+    <div class="timeline-item reveal reveal-delay-3">
+      <div class="timeline-meta">
+        <span class="timeline-period">Formação</span>
+        <span class="timeline-company">Unicatólica · Google · Alura · DSA</span>
+      </div>
+      <div class="timeline-role">Engenharia de Produção e outras formações</div>
+      <p class="timeline-desc">
+        Onde começou meu interesse por processos e dados, onde o controle estatistico dos processos se tornou parte da minha visão para negócios. Além disso possuo certificações como o Google Data Analytics Certificate, e formações como Data Science e Power BI (Alura), além da Formação em Power BI da Data Science Academy/
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="reveal">
+    <div class="section-label">04 — Contato</div>
+    <h2 class="section-title">Vamos trabalhar<br>juntos</h2>
+  </div>
+
+  <div class="contato-inner">
+    <div class="contato-text reveal reveal-delay-1">
+      <p>
+        Seja para um projeto de dados, consultoria analítica ou uma conversa sobre oportunidades — estou disponível e respondo em até 24 horas. Acredito que os melhores projetos nascem de uma boa conversa inicial.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:datalopes1@proton.me" class="contact-link">
+          <div class="contact-link-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-link-text">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">datalopes1@proton.me</span>
+          </div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+
+        <a href="https://www.linkedin.com/in/datalopes1/" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <div class="contact-link-text">
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-value">/in/datalopes1</span>
+          </div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+
+        <a href="https://github.com/datalopes1" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <div class="contact-link-text">
+            <span class="contact-link-label">GitHub</span>
+            <span class="contact-link-value">/datalopes1</span>
+          </div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="contato-cta reveal reveal-delay-2">
+      <h3>Disponível para novos projetos</h3>
+      <p>
+        Se você precisa de alguém para construir pipelines de dados, dashboards que realmente funcionam, ou modelos preditivos que geram valor — vamos conversar. Cada projeto começa com entender o problema de negócio antes de qualquer linha de código.
+      </p>
+      <a href="mailto:datalopes1@proton.me" class="btn btn-primary" style="display:inline-flex;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Enviar mensagem
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 André Lopes. Todos os direitos reservados.</p>
+  <div style="display:flex;gap:1.5rem;">
+    <a href="https://www.linkedin.com/in/datalopes1/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/datalopes1" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:datalopes1@proton.me">Email</a>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  // Intersection Observer for reveal animations
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
