@@ -1,7 +1,5 @@
 # André Lopes - Portfólio de Data Science & Analytics
 
-![Portfolio Preview](img/preview.png)
-
 Este é o repositório do meu portfólio pessoal desenvolvido com HTML, CSS e JavaScript. O site destaca meus projetos em análise de dados, dashboards interativos, machine learning e soluções de BI usando ferramentas como Power BI, Python, SQL e BigQuery.
 
 🔗 [Visualizar Site](https://datalopes1.github.io ) (GitHub Pages)
